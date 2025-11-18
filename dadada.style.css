@@ -1,0 +1,331 @@
+/* === Kimi no Na wa Custom Profile Theme === */
+
+/* ===== CSS VARIABLES ===== */
+:root {
+  /* Couleurs principales */
+  --primary-color: #ff7eb9; /* rose tendre */
+  --primary-dark: #6a0dad; /* violet profond */
+  --secondary-color: #00cfff; /* bleu ciel */
+  --gradient-primary: linear-gradient(45deg, #ff7eb9, #00cfff);
+  --gradient-navbar-dark: linear-gradient(45deg, #1e0033, #6a0dad);
+  --gradient-navbar-light: linear-gradient(45deg, #ff7eb9, #00cfff);
+
+  /* Couleurs de fond */
+  --bg-dark: #0b0033;
+  --bg-primary-alpha: rgba(255, 126, 185, 0.3);
+  --bg-light-alpha: rgba(255, 255, 255, 0.5);
+  --bg-card-dark: rgba(26, 0, 51, 0.8);
+  --bg-card-light: rgba(255, 255, 255, 0.8);
+
+  /* Images de fond */
+  --bg-light: url(https://i.imgur.com/QXewg24.png);
+  --bg-dark: url(https://i.imgur.com/QXewg24.png);
+ 
+  /* Polices */
+  --font-primary: "Segoe UI", sans-serif;
+  --font-display: 'Anime Ace 2.0 BB', cursive;
+  --font-decorative: 'Cinzel Decorative';
+
+  /* Ombres et effets */
+  --text-shadow: 1px 1px 5px #000a;
+  --box-shadow-glow: 0 0 15px #ff7eb9, 0 0 25px #00cfff inset;
+  --border-radius: 10px;
+  --border-radius-large: 10px;
+}
+
+/* ===== BASE STYLES ===== */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--bg-dark);
+  color: var(--primary-color) !important;
+  font-family: var(--font-primary);
+  overflow-x: hidden;
+}
+
+/* ===== TYPOGRAPHY ===== */
+h1, h2, h3 {
+  font-family: var(--font-display);
+  color: var(--primary-color);
+  text-shadow: var(--text-shadow);
+  letter-spacing: 1px;
+}
+
+/* ===== MAIN CONTAINER ===== */
+.container {
+  position: relative;
+  z-index: 0;
+  min-height: 100vh;
+  min-width: 100vw;
+}
+
+.container::before,
+.container::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  transition: clip-path 2s cubic-bezier(1,0,0,1);
+  pointer-events: none;
+}
+
+.container::before {
+  background-image: var(--bg-light);
+}
+
+.container::after {
+  background-image: var(--bg-dark);
+}
+
+/* ===== THEMES (LIGHT/DARK) ===== */
+body.dark .container::after {
+  clip-path: circle(150% at 50% 50%);
+}
+
+body.dark .container::before {
+  clip-path: circle(0% at 50% 50%);
+}
+
+body.light .container::after {
+  clip-path: circle(0% at 50% 50%);
+}
+
+body.light .container::before {
+  clip-path: circle(150% at 50% 50%);
+}
+
+/* ===== NAVIGATION ===== */
+body.dark header.NavBar {
+  background: var(--gradient-navbar-dark);
+}
+
+body.light header.NavBar {
+  background: var(--gradient-navbar-light);
+}
+
+.ogs-nav-logo {
+  background-image: var(--logo-url) !important;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+/* ===== BUTTONS AND INTERACTIVE ELEMENTS ===== */
+button, .custom-stats {
+  position: relative;
+  padding: 14px 28px;
+  background: var(--gradient-primary);
+  color: white;
+  font-weight: bold;
+  border: none;
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  overflow: hidden;
+  z-index: 1;
+  box-shadow: var(--box-shadow-glow);
+  transition: transform 0.2s ease;
+}
+
+button::after, .custom-stats::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 10%;
+  height: 50%;
+  background: radial-gradient(circle, rgba(255,255,255,0.8), transparent);
+  border-radius: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  opacity: 0;
+  transition: transform 0.4s ease, opacity 0.4s ease;
+  pointer-events: none;
+  z-index: 0;
+}
+
+button:hover::after, .custom-stats:hover::after {
+  transform: translate(-50%, -50%) scale(8);
+  opacity: 1;
+}
+
+/* ===== CARDS ===== */
+.Card {
+  background-color: var(--bg-card-dark);
+  border-radius: var(--border-radius-large);
+  box-shadow: 0 0 20px #ff7eb9, 0 0 30px #00cfff inset;
+}
+
+/* ===== STAR EFFECTS ===== */
+.star {
+  display: block;
+  opacity: 0.8;
+  position: absolute;
+  width: 3px;
+  height: 3px;
+  background: #fff;
+  border-radius: 50%;
+  box-shadow: 0 0 8px #fff, 0 0 16px #c0f0ff;
+  animation: shootingStar linear infinite;
+}
+
+@keyframes shootingStar {
+  0% { transform: translateX(0) translateY(0); opacity: 0; }
+  50% { opacity: 1; }
+  100% { transform: translateX(1000px) translateY(-500px); opacity: 0; }
+}
+
+/* Floating sparkles */
+.sparkle {
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  background: radial-gradient(circle, #ffe2ff 0%, transparent 70%);
+  border-radius: 50%;
+  animation: floatSparkle 8s linear infinite;
+}
+
+@keyframes floatSparkle {
+  0% { transform: translateY(0) translateX(0) scale(0.8); opacity: 0.3; }
+  50% { transform: translateY(-150px) translateX(20px) scale(1.2); opacity: 0.8; }
+  100% { transform: translateY(-300px) translateX(-10px) scale(1); opacity: 0; }
+}
+
+/* ===== SEARCH INPUT ===== */
+.search {
+  width: 40%;
+  padding: 8px 4px;
+  margin-bottom: 10px;
+  border-radius: 13px;
+  font-size: 16px;
+  font-family: var(--font-display);
+  z-index: 2;
+  border: 2px solid var(--secondary-color);
+  background-color: rgba(255,255,255,0.2);
+  color: #fff;
+}
+
+/* ===== TABLE STYLING ===== */
+.PaginatedTable.game-history-table,
+.PaginatedTable.review-history-table {
+  border-collapse: collapse;
+  width: 100%;
+  border-radius: 8px;
+  overflow: hidden;
+  font-size: 13px;
+  color: #fff;
+  background-color: rgba(26,0,51,0.6);
+}
+
+.game-history-table th,
+.review-history-table thead th {
+  padding: 10px 8px;
+  text-align: left;
+  background: linear-gradient(45deg, #6a0dad, #ff7eb9);
+  color: #fff;
+}
+
+.game-history-table tbody tr:nth-child(even),
+.review-history-table tbody tr:nth-child(even) {
+  background-color: rgba(0, 191, 255, 0.2);
+}
+
+.game-history-table tbody tr:nth-child(odd),
+.review-history-table tbody tr:nth-child(odd) {
+  background-color: rgba(255, 126, 185, 0.2);
+}
+
+.game-history-table tbody tr:hover,
+.review-history-table tbody tr:hover {
+  transform: scale(1.01);
+  box-shadow: 0 5px 15px rgba(255, 126, 185, 0.5);
+}
+
+/* ===== BUTTON HOVER EFFECTS ===== */
+button:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 25px #ff7eb9, 0 0 50px #00cfff;
+}
+
+
+/* ===== Kimi no Na wa - Effets Étoiles et Comètes ===== */
+.container {
+  background-image: url(https://i.imgur.com/QXewg24.png);}
+/* Étoiles fixes */
+.star {
+  display: block;
+  position: absolute;
+  width: 2px;
+  height: 2px;
+  background: white;
+  border-radius: 50%;
+  opacity: 0.8;
+  box-shadow: 0 0 4px #fff, 0 0 8px #c0f0ff;
+  animation: twinkle 2s infinite alternate;
+}
+
+/* Étoiles qui scintillent */
+@keyframes twinkle {
+  0% { opacity: 0.4; transform: scale(0.8); }
+  50% { opacity: 1; transform: scale(1.2); }
+  100% { opacity: 0.4; transform: scale(0.8); }
+}
+
+/* Étoiles filantes / comètes */
+.shooting-star {
+  position: absolute;
+  width: 3px;
+  height: 3px;
+  background: white;
+  border-radius: 50%;
+  box-shadow: 0 0 6px #fff, 0 0 12px #a0e0ff;
+  opacity: 0;
+  animation: shootingStarAnim linear infinite;
+}
+
+/* Animation comète */
+@keyframes shootingStarAnim {
+  0% { transform: translateX(0) translateY(0) rotate(45deg); opacity: 0; }
+  10% { opacity: 1; }
+  50% { opacity: 1; }
+  100% { transform: translateX(-1200px) translateY(600px) rotate(45deg); opacity: 0; }
+}
+
+/* Étincelles flottantes (comme pollen lumineux) */
+.sparkle {
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  background: radial-gradient(circle, #ffe2ff 0%, transparent 70%);
+  border-radius: 50%;
+  animation: floatSparkle 8s linear infinite;
+}
+
+/* Animation des étincelles flottantes */
+@keyframes floatSparkle {
+  0% { transform: translateY(0) translateX(0) scale(0.8); opacity: 0.3; }
+  50% { transform: translateY(-150px) translateX(20px) scale(1.2); opacity: 0.8; }
+  100% { transform: translateY(-300px) translateX(-10px) scale(1); opacity: 0; }
+}
+
+/* Positionnement aléatoire des étoiles et comètes (exemples) */
+.star1 { top: 10%; left: 15%; }
+.star2 { top: 25%; left: 40%; }
+.star3 { top: 60%; left: 30%; }
+.star4 { top: 45%; left: 70%; }
+.star5 { top: 80%; left: 20%; }
+
+.shooting-star1 { top: 5%; left: 100%; animation-duration: 4s; animation-delay: 0s; }
+.shooting-star2 { top: 15%; left: 100%; animation-duration: 5s; animation-delay: 2s; }
+.shooting-star3 { top: 35%; left: 100%; animation-duration: 6s; animation-delay: 4s; }
+.shooting-star4 { top: 50%; left: 100%; animation-duration: 5.5s; animation-delay: 1s; }
+.shooting-star5 { top: 70%; left: 100%; animation-duration: 6.5s; animation-delay: 3s; }
+
+/* Étincelles flottantes - exemples */
+.sparkle1 { bottom: 0; left: 10%; animation-duration: 14s; }
+.sparkle2 { bottom: 0; left: 35%; animation-duration: 16s; animation-delay: 2s; }
+.sparkle3 { bottom: 0; left: 60%; animation-duration: 12s; animation-delay: 1s; }
+.sparkle4 { bottom: 0; left: 85%; animation-duration: 18s; animation-delay: 3s; }
