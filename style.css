@@ -1,0 +1,183 @@
+/*
+OGS custom profile CSS (ready-to-host)
+File: style.css
+
+HOW TO USE (short):
+1) Create a GitHub repo named: YOURUSERNAME.github.io
+2) Add this file at the root as `style.css` and commit.
+3) Enable GitHub Pages (branch main / root) — your file will be available at:
+   https://YOURUSERNAME.github.io/style.css
+4) In your OGS profile "About / À propos", add this single line (HTML):
+   <link rel="stylesheet" type="text/css" href="https://YOURUSERNAME.github.io/style.css">
+5) Replace the placeholder image URLs below with your own images (background, wolf silhouette, flower icon).
+
+NOTES & TIPS:
+- The CSS uses many !important rules to override OGS styles; that's intentional.
+- Keep images hosted on HTTPS (GitHub Pages, Imgur with https, etc.)
+- If something breaks, remove/comment sections until it looks right.
+
+--- CUSTOMIZATION keys you may want to change ---
+-- Replace https://fr.vecteezy.com/photo/27103739-la-nuit-foret-paysage-avec-une-fermer-de-le-orion-constellation-parmi-une-etoile-ciel with your forest/night background
+-- Replace https://e7.pngegg.com/pngimages/195/81/png-clipart-gray-wolf-silhouette-silhouette-animals-carnivoran.png with a silhouette PNG of a wolf (transparent bg)
+-- Replace https://lagazettedeteyvat.fr/wp-content/uploads/2025/08/Serenade-de-la-lune-soyeuse.webp with a small blue flower PNG for accent
+
+*/
+
+:root{
+  --accent-blue: #2ea6ff; /* bright blue */
+  --deep-blue: #0b2a3b; /* near-black blue */
+  --silver: #bfc7cd;
+  --bg-overlay: rgba(3,6,10,0.55);
+  --text-main: #e6eef8;
+}
+
+/* Global container override */
+.container, .profile-page, .profile-container {
+  max-width: none !important;
+  background: linear-gradient(180deg, rgba(2,6,10,0.35), rgba(2,6,10,0.55)), url("https://static.vecteezy.com/ti/photos-gratuite/p2/27103739-la-nuit-foret-paysage-avec-une-fermer-de-le-orion-constellation-parmi-une-etoile-ciel-gratuit-photo.jpg") center top / cover no-repeat !important;
+  color: var(--text-main) !important;
+  border-radius: 12px !important;
+  box-shadow: 0 8px 30px rgba(0,0,0,0.65) !important;
+  padding: 18px !important;
+}
+
+/* Header & title */
+.profile-header, .profile-info {
+  background: linear-gradient(90deg, rgba(10,20,30,0.2), rgba(10,20,30,0.05)) !important;
+  border-radius: 10px !important;
+  padding: 12px !important;
+}
+
+.profile-header h1, .user-header h1 {
+  font-family: "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif !important;
+  font-size: 2.1rem !important;
+  color: var(--accent-blue) !important;
+  text-shadow: 0 2px 10px rgba(0,0,0,0.7) !important;
+  letter-spacing: 0.6px !important;
+}
+
+.profile-header h2, .user-header h2 {
+  color: var(--silver) !important;
+  font-size: 1rem !important;
+}
+
+/* Avatar styling */
+.avatar, .profile-avatar img {
+  border-radius: 50% !important;
+  border: 3px solid rgba(255,255,255,0.06) !important;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.6) !important;
+  width: 128px !important;
+  height: 128px !important;
+  object-fit: cover !important;
+}
+
+/* Moon glow behind avatar */
+.avatar::after, .profile-avatar::after {
+  content: "" !important;
+  position: absolute !important;
+  width: 220px !important;
+  height: 220px !important;
+  left: calc(50% - 110px) !important;
+  top: -40px !important;
+  background: radial-gradient(circle at 40% 30%, rgba(190,210,255,0.18), rgba(120,150,220,0.06) 35%, rgba(0,0,0,0) 60%) !important;
+  filter: blur(18px) !important;
+  pointer-events: none !important;
+}
+
+/* Wolf silhouette overlay (place under header) */
+.profile-page::before {
+  content: "" !important;
+  position: absolute !important;
+  pointer-events: none !important;
+  right: 12% !important;
+  top: 10% !important;
+  width: 360px !important;
+  height: 360px !important;
+  background-image: url("https://e7.pngegg.com/pngimages/195/81/png-clipart-gray-wolf-silhouette-silhouette-animals-carnivoran.png") !important; /* transparent PNG recommended */
+  background-size: contain !important;
+  background-repeat: no-repeat !important;
+  opacity: 0.12 !important;
+  mix-blend-mode: screen !important;
+}
+
+/* Blue flower accent near name */
+.profile-header .name::after {
+  content: "" !important;
+  display: inline-block !important;
+  width: 28px !important;
+  height: 28px !important;
+  margin-left: 10px !important;
+  vertical-align: middle !important;
+  background-image: url("https://lagazettedeteyvat.fr/wp-content/uploads/2025/08/Serenade-de-la-lune-soyeuse.webp") !important;
+  background-size: contain !important;
+  background-repeat: no-repeat !important;
+}
+
+/* Card styles for biography / stats */
+.profile-section, .user-stats, .about, .bio {
+  background: linear-gradient(180deg, rgba(6,12,18,0.22), rgba(6,12,18,0.08)) !important;
+  border: 1px solid rgba(255,255,255,0.03) !important;
+  padding: 12px !important;
+  border-radius: 10px !important;
+}
+
+/* Links & buttons */
+a, .btn, .button {
+  color: var(--accent-blue) !important;
+  text-decoration: none !important;
+}
+
+/* Small decorative moon icon in corner */
+.profile-page .moon-deco {
+  position: absolute !important;
+  left: 8% !important;
+  top: 6% !important;
+  width: 72px !important;
+  height: 72px !important;
+  border-radius: 50% !important;
+  background: radial-gradient(circle at 35% 30%, rgba(255,255,255,0.95), rgba(210,230,255,0.12) 35%) !important;
+  box-shadow: 0 4px 18px rgba(80,120,200,0.12) inset !important;
+  opacity: 0.85 !important;
+  mix-blend-mode: overlay !important;
+}
+
+/* Make headings stylish */
+h3, h4 {
+  color: var(--silver) !important;
+  border-bottom: 1px dashed rgba(255,255,255,0.03) !important;
+  padding-bottom: 6px !important;
+}
+
+/* Stat numbers */
+.stat-number {
+  color: var(--accent-blue) !important;
+  font-weight: 700 !important;
+}
+
+/* Footer and small text */
+small, .muted {
+  color: rgba(190,200,215,0.6) !important;
+}
+
+/* Responsive adjustments */
+@media (max-width: 800px) {
+  .profile-page::before{ display: none !important; }
+  .avatar, .profile-avatar img { width: 96px !important; height: 96px !important; }
+  .profile-header h1 { font-size: 1.6rem !important; }
+}
+
+/* Optional: gentle animation */
+@keyframes floaty {
+  0%{ transform: translateY(0px); }
+  50%{ transform: translateY(-6px); }
+  100%{ transform: translateY(0px); }
+}
+
+.profile-header h1 { animation: floaty 6s ease-in-out infinite !important; }
+
+/* Safety fallback: if background fails, fall back to gradient */
+.container[data-bg-failed="true"]{
+  background: linear-gradient(135deg,#071022,#0b1522) !important;
+}
+
+/* end of stylesheet */
