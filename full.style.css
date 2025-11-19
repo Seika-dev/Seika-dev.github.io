@@ -3,12 +3,12 @@
 /* ===== CSS VARIABLES ===== */
 :root {
   /* Couleurs principales */
-  --primary-color: rgb(255, 36, 0);
-  --primary-dark: #ff2400;
-  --secondary-color: #ff8c00;
-  --gradient-primary: linear-gradient(45deg, #ff2d00, #ff8c00);
-  --gradient-navbar-dark: linear-gradient(45deg, #3b0000, #b46918);
-  --gradient-navbar-light: linear-gradient(45deg, #c3751d, #c00000);
+  --primary-color: rgb(0, 129, 1);
+  --primary-dark: #0081ff;
+  --secondary-color: #00c1ff;
+  --gradient-primary: linear-gradient(45deg, #0081ff, #00c1ff);
+  --gradient-navbar-dark: linear-gradient(45deg, #00303b, #1873b4);
+  --gradient-navbar-light: linear-gradient(45deg, #1d91c3, #0047c0);
 
   /* Couleurs de fond */
   --bg-dark: #040404;
