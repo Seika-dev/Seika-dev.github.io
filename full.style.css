@@ -18,9 +18,13 @@
   --bg-card-light: #ffffffb0;
 
   /* Images de fond */
-  --bg-light: url(https://i.imgur.com/6Idvk9K.jpeg);
-  --bg-dark: url(https://i.imgur.com/nhQ9Tfy.jpeg);
-  --logo-url: url(https://static.wikia.nocookie.net/fictionalcrossover/images/c/ca/Konosuba_Logo.png/);
+--bg-image: url("https://static.vecteezy.com/ti/photos-gratuite/p2/27103739-la-nuit-foret-paysage-avec-une-fermer-de-le-orion-constellation-parmi-une-etoile-ciel-gratuit-photo.jpg");
+--wolf-image: url("https://e7.pngegg.com/pngimages/195/81/png-clipart-gray-wolf-silhouette-silhouette-animals-carnivoran.png");
+--flower-image: url("https://lagazettedeteyvat.fr/wp-content/uploads/2025/08/Serenade-de-la-lune-soyeuse.webp");
+  
+  --bg-light: url(https://static.vecteezy.com/ti/photos-gratuite/p2/27103739-la-nuit-foret-paysage-avec-une-fermer-de-le-orion-constellation-parmi-une-etoile-ciel-gratuit-photo.jpg);
+  --bg-dark: url(https://static.vecteezy.com/ti/photos-gratuite/p2/27103739-la-nuit-foret-paysage-avec-une-fermer-de-le-orion-constellation-parmi-une-etoile-ciel-gratuit-photo.jpg);
+  --logo-url: url(https://lagazettedeteyvat.fr/wp-content/uploads/2025/08/Serenade-de-la-lune-soyeuse.webp);
 
   /* Polices */
   --font-primary: "Segoe UI", sans-serif;
