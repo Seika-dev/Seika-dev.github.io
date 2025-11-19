@@ -448,7 +448,7 @@ body.dark .game-history-table tbody tr:hover,
 body.dark .review-history-table tbody tr:hover {
   background-color: var(--flame-dark-row-hover-bg-general);
   transform: scale(1.01);
-  box-shadow: 0 5px 15px rgba(255, 69, 0, 0.4);
+  box-shadow: 0 5px 15px rgb(0 228 255 / 40%);
   position: relative;
   z-index: 1;
 }
