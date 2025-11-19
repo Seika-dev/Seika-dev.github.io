@@ -197,7 +197,7 @@ body.light .Card {
 }
 
 .col-sm-8 .Card {
-  font-family: var(--font-display);
+  font-family: var(--font-primary);
   font-weight: bold;
 }
 
@@ -354,7 +354,7 @@ body.dark {
   --flame-dark-row-even-bg: #000a2bd4;
   --flame-dark-row-odd-bg: #002a4fcf;
   --flame-dark-row-hover-bg-general: #246277;
-  --flame-dark-row-hover-bg-clickable: #39bdf799;
+  --flame-dark-row-hover-bg-clickable: #378be299;
   --flame-dark-glow-color1: #00d7ff;
   --flame-dark-glow-color2: #0069ff;
   --flame-dark-border-color: #00b0ffb5;
