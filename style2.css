@@ -1,0 +1,143 @@
+/*
+CLEAN THEME — Forêt • Lune • Bleu • Argent • Loup • Fleurs bleues
+Version légère, lisible, stable — adaptée à ton style
+Fichier : style.css
+
+— COMMENT INSTALLER —
+1. Mettre ce fichier sur : https://TONUSER.github.io/style.css
+2. Dans ton profil OGS → "À propos" → ajouter :
+   <link rel="stylesheet" href="https://TONUSER.github.io/style.css">
+
+— Personnalisation simple —
+Changer uniquement ces trois variables :
+  --bg-image
+  --wolf-image
+  --flower-image
+
+Toutes les autres couleurs sont cohérentes avec ton thème.
+*/
+
+:root{
+  --accent-blue: #7dcaff;
+  --deep-blue: #081520;
+  --silver: #c7d2dd;
+  --text: #eaf3ff;
+
+  --bg-image: url("https://static.vecteezy.com/ti/photos-gratuite/p2/27103739-la-nuit-foret-paysage-avec-une-fermer-de-le-orion-constellation-parmi-une-etoile-ciel-gratuit-photo.jpg");
+  --wolf-image: url("https://e7.pngegg.com/pngimages/195/81/png-clipart-gray-wolf-silhouette-silhouette-animals-carnivoran.png");
+  --flower-image: url("https://lagazettedeteyvat.fr/wp-content/uploads/2025/08/Serenade-de-la-lune-soyeuse.webp");
+}
+
+/* ————— 1) FOND DE PAGE ————— */
+.profile-page, .container, .profile-container{
+  background: linear-gradient(180deg, rgba(0,10,20,0.55), rgba(0,10,20,0.75)), var(--bg-image) center/cover no-repeat !important;
+  color: var(--text) !important;
+  padding: 20px !important;
+  border-radius: 12px !important;
+}
+
+/* ————— 2) EN-TÊTE, NOM, TITRE ————— */
+.profile-header{
+  background: rgba(0,0,0,0.25) !important;
+  border: 1px solid rgba(255,255,255,0.05) !important;
+  padding: 16px !important;
+  border-radius: 12px !important;
+}
+
+.profile-header h1{
+  color: var(--accent-blue) !important;
+  font-size: 2rem !important;
+  text-shadow: 0 0 10px rgba(80,140,255,0.5) !important;
+  animation: glowname 6s ease-in-out infinite;
+}
+
+@keyframes glowname{
+  0%,100%{ text-shadow: 0 0 10px rgba(80,140,255,0.5); }
+  50%{ text-shadow: 0 0 18px rgba(140,200,255,0.9); }
+}
+
+/* FLEUR BLEUE À CÔTÉ DU NOM */
+.profile-header h1::after{
+  content: "";
+  display: inline-block;
+  width: 28px;
+  height: 28px;
+  margin-left: 8px;
+  background: var(--flower-image) center/contain no-repeat;
+}
+
+/* ————— 3) AVATAR ————— */
+.profile-avatar img{
+  border-radius: 50% !important;
+  width: 130px !important;
+  height: 130px !important;
+  border: 3px solid rgba(255,255,255,0.08) !important;
+  box-shadow: 0 6px 22px rgba(0,0,0,0.6) !important;
+}
+
+/* LUMIÈRE DE LUNE DERRIÈRE L'AVATAR */
+.profile-avatar{
+  position: relative !important;
+}
+.profile-avatar::after{
+  content: "";
+  position: absolute;
+  width: 220px;
+  height: 220px;
+  left: -45px;
+  top: -40px;
+  background: radial-gradient(circle at 40% 35%, rgba(200,220,255,0.25), rgba(0,0,0,0));
+  filter: blur(16px);
+  pointer-events: none;
+}
+
+/* ————— 4) DÉCOR LOUP ————— */
+.profile-page::before{
+  content: "";
+  position: absolute;
+  right: 10%;
+  top: 12%;
+  width: 300px;
+  height: 300px;
+  background: var(--wolf-image) center/contain no-repeat;
+  opacity: 0.13;
+  mix-blend-mode: screen;
+  pointer-events: none;
+}
+
+/* ————— 5) CARTES (bio, stats, friends…) ————— */
+.profile-section, .user-stats, .about, .bio{
+  background: rgba(0,0,0,0.28) !important;
+  border: 1px solid rgba(255,255,255,0.06) !important;
+  padding: 14px !important;
+  border-radius: 12px !important;
+  backdrop-filter: blur(4px);
+}
+
+h3, h4{
+  color: var(--silver) !important;
+  border-bottom: 1px dashed rgba(255,255,255,0.08) !important;
+  padding-bottom: 6px;
+}
+
+.stat-number{
+  color: var(--accent-blue) !important;
+  font-weight: 700;
+}
+
+/* ————— 6) LIENS ET BOUTONS ————— */
+a{
+  color: var(--accent-blue) !important;
+  text-decoration: none !important;
+}
+
+a:hover{
+  filter: brightness(1.2);
+}
+
+/* ————— 7) VERSION MOBILE ————— */
+@media(max-width: 800px){
+  .profile-page::before{ display:none; }
+  .profile-avatar img{ width:100px !important; height:100px !important; }
+  .profile-header h1{ font-size:1.5rem !important; }
+}
