@@ -393,21 +393,22 @@ body.light {
 /* ===== VARIABLES DE COULEURS POUR LE MODE ACCESSIBLE (Haut contraste) ===== */
 body.accessible {
   --flame-accessible-table-bg: #1a0000;
-  --flame-accessible-table-border-bottom: rgba(255, 69, 0, 0.5);
-  --flame-accessible-table-text-color: #fff;
-  --flame-accessible-header-bg: #580000;
-  --flame-accessible-row-even-bg: #2b0000;
-  --flame-accessible-row-odd-bg: #4f0000;
-  --flame-accessible-row-hover-bg-general: #772424;
-  --flame-accessible-row-hover-bg-clickable: #69000096;
-  --flame-accessible-glow-color1: #ff8c00;
-  --flame-accessible-glow-color2: #ff4500;
-  --flame-accessible-border-color: #ff4500;
-  --flame-accessible-date-text-color: #ffde5b;
-  --flame-accessible-won-result-color: #7aff7a;
-  --flame-accessible-lost-result-color: #ff6b6b;
-  --flame-accessible-header-glow: 0 0 10px #ff8c00, 0 0 20px #ff4500;
-  --flame-accessible-header-border: 4px solid #ff4500;
+  --flame-accessible -table-bg: #001936;
+  --flame-accessible -table-border-bottom: rgb(0 127 255 / 50%);
+  --flame-accessible -table-text-color: #ddebfe;
+  --flame-accessible -header-bg: #00132ccf;
+  --flame-accessible -row-even-bg: #000a2bd4;
+  --flame-accessible -row-odd-bg: #002a4fcf;
+  --flame-accessible -row-hover-bg-general: #246277;
+  --flame-accessible -row-hover-bg-clickable: #39bdf799;
+  --flame-accessible -glow-color1: #00d7ff;
+  --flame-accessible -glow-color2: #0069ff;
+  --flame-accessible -border-color: #00b0ffb5;
+  --flame-accessible date-text-color: #45c1fe;
+  --flame-accessible -won-result-color: #7aff7a;
+  --flame-accessible -lost-result-color: #ff6b6b;
+  --flame-accessible -header-glow: 0 0 10px #00fdff, 0 0 20px #005bff;
+  --flame-accessible -header-border: 4px solid #0385bf;
 }
 
 
