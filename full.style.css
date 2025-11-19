@@ -271,13 +271,13 @@ body.light .Card {
 /* ===== CHARTS AND DATA ===== */
 /* Variables for chart colors */
 :root {
-  --chart-weak-wins: #a5077787;
-  --chart-strong-wins: rgba(255, 36, 0, 0.48);
-  --chart-weak-losses: #1b0f1b85;
-  --chart-strong-losses: #5299ffb8;
+  --chart-weak-wins: #00bcd49c;
+  --chart-strong-wins: rgb(98 238 255 / 68%);
+  --chart-weak-losses: #001c55d1;
+  --chart-strong-losses: #02318dcc;
   --chart-rating-line: var(--primary-dark);
-  --chart-deviation-area: #6c0f00b0;
-  --chart-area-fill: #ff24005e;
+  --chart-deviation-area: #00286b8a;
+  --chart-area-fill: #0092ff5e;
 }
 
 /* Rating charts */
