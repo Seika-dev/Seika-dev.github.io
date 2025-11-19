@@ -352,22 +352,22 @@ body.light .Card {
 /* ===== RÈGLES POUR LE MODE SOMBRE ===== */
 /* ===== VARIABLES DE COULEURS POUR LE MODE SOMBRE (par défaut) ===== */
 body.dark {
-  --flame-dark-table-bg: #1a0000;
-  --flame-dark-table-border-bottom: rgba(255, 69, 0, 0.5);
-  --flame-dark-table-text-color: #fff;
-  --flame-dark-header-bg: #580000;
-  --flame-dark-row-even-bg: #2b0000;
-  --flame-dark-row-odd-bg: #4f0000;
-  --flame-dark-row-hover-bg-general: #772424;
-  --flame-dark-row-hover-bg-clickable: #69000096;
-  --flame-dark-glow-color1: #ff8c00;
-  --flame-dark-glow-color2: #ff4500;
-  --flame-dark-border-color: #ff4500;
-  --flame-dark-date-text-color: #ffde5b;
+  --flame-dark-table-bg: #001936;
+  --flame-dark-table-border-bottom: rgb(0 127 255 / 50%);
+  --flame-dark-table-text-color: #ddebfe;
+  --flame-dark-header-bg: #00132ccf;
+  --flame-dark-row-even-bg: #000a2bd4;
+  --flame-dark-row-odd-bg: #002a4fcf;
+  --flame-dark-row-hover-bg-general: #246277;
+  --flame-dark-row-hover-bg-clickable: #39bdf799;
+  --flame-dark-glow-color1: #00d7ff;
+  --flame-dark-glow-color2: #0069ff;
+  --flame-dark-border-color: #00b0ffb5;
+  --flame-dark-date-text-color: #45c1fe;
   --flame-dark-won-result-color: #7aff7a;
   --flame-dark-lost-result-color: #ff6b6b;
-  --flame-dark-header-glow: 0 0 10px #ff8c00, 0 0 20px #ff4500;
-  --flame-dark-header-border: 4px solid #ff4500;
+  --flame-dark-header-glow: 0 0 10px #00fdff, 0 0 20px #005bff;
+  --flame-dark-header-border: 4px solid #0385bf;
 }
 
 /* ===== VARIABLES DE COULEURS POUR LE MODE CLAIR ===== */
