@@ -1,0 +1,212 @@
+/*
+FULL FEATURES THEME — Forêt • Lune • Bleu • Argent • Loup • Fleurs bleues
+Version : Base complète avec animations, particules, décor, header animé, cartes dynamiques,
+et système d’ambiances inspiré du style rikikilord (effets étoilés, glow, transitions).
+
+!! Étape 1 : SQUELETTE COMPLET — Pas encore 100% final, mais toutes les fondations sont posées.
+!! Étape 2 : je vais affiner avec toi (ajouts d’effets, ajustements, animations avancées)
+
+Tu pourras vérifier sur ton profil avant qu’on passe aux finitions.
+
+— INSTALLATION —
+1) Mettre ce fichier sur : https://TONUSER.github.io/style.css
+2) Dans ton profil OGS, coller dans « À propos » :
+   <link rel="stylesheet" href="https://TONUSER.github.io/style.css">
+
+— VARIABLES PERSONNALISABLES —
+  --bg-image : fond forêt de nuit
+  --wolf-image : silhouette de loup
+  --flower-image : fleur bleue
+
+Toutes les animations réagiront automatiquement.
+*/
+
+:root{
+  --accent-blue: #78c8ff;
+  --deep-blue: #03101a;
+  --silver: #ccd7e4;
+  --text: #eaf3ff;
+
+  --bg-image: url("https://static.vecteezy.com/ti/photos-gratuite/p2/27103739-la-nuit-foret-paysage-avec-une-fermer-de-le-orion-constellation-parmi-une-etoile-ciel-gratuit-photo.jpg");
+  --wolf-image: url("https://e7.pngegg.com/pngimages/195/81/png-clipart-gray-wolf-silhouette-silhouette-animals-carnivoran.png");
+  --flower-image: url("https://lagazettedeteyvat.fr/wp-content/uploads/2025/08/Serenade-de-la-lune-soyeuse.webp");
+
+  /* effets dynamiques */
+  --glow-1: rgba(120,180,255,0.55);
+  --glow-2: rgba(160,210,255,0.85);
+  --panel-bg: rgba(0,0,0,0.35);
+}
+
+/* ————————————
+   1) FOND GLOBAL + PARTICULES (étoiles)
+———————————— */
+body, .profile-page{
+  background: linear-gradient(180deg, rgba(0,10,20,0.45), rgba(0,10,20,0.85)), var(--bg-image) center/cover no-repeat fixed !important;
+  color: var(--text) !important;
+}
+
+/* Système de particules étoiles */
+body::before{
+  content: "";
+  position: fixed;
+  width: 200%;
+  height: 200%;
+  top: -50%;
+  left: -50%;
+  background: radial-gradient(circle, rgba(255,255,255,0.3) 1px, transparent 1px) 0 0/3px 3px;
+  opacity: 0.10;
+  animation: starfield 60s linear infinite;
+  pointer-events: none;
+}
+@keyframes starfield{
+  from{ transform:translate(0,0); }
+  to{ transform:translate(-300px,600px); }
+}
+
+/* ————————————
+   2) HEADER + TITRE ANIMÉ
+———————————— */
+.profile-header{
+  background: rgba(0,0,0,0.35) !important;
+  border: 1px solid rgba(255,255,255,0.08) !important;
+  padding: 18px !important;
+  border-radius: 16px !important;
+  box-shadow: 0 0 22px rgba(20,60,120,0.25);
+  position: relative;
+  overflow: hidden;
+}
+
+/* lueur animée du pseudo */
+.profile-header h1{
+  font-size: 2.3rem !important;
+  color: var(--accent-blue) !important;
+  text-shadow: 0 0 12px var(--glow-1);
+  animation: nameglow 6s ease-in-out infinite;
+}
+@keyframes nameglow{
+  0%,100%{ text-shadow:0 0 12px var(--glow-1); }
+  50%{ text-shadow:0 0 26px var(--glow-2); }
+}
+
+/* Fleur bleue sur le nom */
+.profile-header h1::after{
+  content: "";
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  margin-left: 10px;
+  background: var(--flower-image) center/contain no-repeat;
+}
+
+/* ————————————
+   3) AVATAR + halo lunaire + onde brillante
+———————————— */
+.profile-avatar img{
+  width: 150px !important;
+  height: 150px !important;
+  border-radius: 50% !important;
+  border: 3px solid rgba(255,255,255,0.15) !important;
+  box-shadow: 0 0 22px rgba(180,220,255,0.25);
+  position: relative;
+  z-index: 2;
+}
+
+/* halo lunaire */
+.profile-avatar{
+  position: relative;
+}
+.profile-avatar::before{
+  content: "";
+  position: absolute;
+  width: 260px;
+  height: 260px;
+  left: -55px;
+  top: -55px;
+  background: radial-gradient(circle, rgba(200,220,255,0.25), transparent 70%);
+  filter: blur(20px);
+  pointer-events:none;
+}
+
+/* onde lumineuse animée */
+.profile-avatar::after{
+  content: "";
+  position: absolute;
+  width: 180px;
+  height: 180px;
+  left: -15px;
+  top: -15px;
+  border-radius: 50%;
+  box-shadow: 0 0 25px rgba(150,200,255,0.4);
+  animation: pulse 5s ease-in-out infinite;
+  pointer-events:none;
+}
+@keyframes pulse{
+  0%,100%{ transform:scale(1); opacity:0.5; }
+  50%{ transform:scale(1.15); opacity:0.9; }
+}
+
+/* ————————————
+   4) LOUP DÉCORATIF
+———————————— */
+.profile-page::after{
+  content: "";
+  position: fixed;
+  right: 5%;
+  bottom: 5%;
+  width: 380px;
+  height: 380px;
+  background: var(--wolf-image) center/contain no-repeat;
+  opacity: 0.18;
+  filter: drop-shadow(0 0 12px rgba(120,160,255,0.25));
+  pointer-events:none;
+}
+
+/* ————————————
+   5) CARTES / PANELS ANIMÉS
+———————————— */
+.profile-section, .user-stats, .about, .bio{
+  background: var(--panel-bg) !important;
+  border: 1px solid rgba(255,255,255,0.06) !important;
+  padding: 16px !important;
+  border-radius: 14px !important;
+  backdrop-filter: blur(6px) brightness(1.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* effet hover lumineux */
+.profile-section:hover, .user-stats:hover, .about:hover, .bio:hover{
+  transform: translateY(-4px);
+  box-shadow: 0 0 20px rgba(120,180,255,0.25);
+}
+
+h3, h4{
+  color: var(--silver) !important;
+  border-bottom: 1px dashed rgba(255,255,255,0.08) !important;
+  padding-bottom: 6px;
+  margin-bottom: 8px;
+}
+.stat-number{
+  color: var(--accent-blue) !important;
+  font-weight: 800 !important;
+}
+
+/* ————————————
+   6) BOUTONS HOLOGRAPHIQUES
+———————————— */
+a, button, .btn{
+  color: var(--accent-blue) !important;
+  text-decoration: none !important;
+  position: relative;
+}
+a:hover{
+  filter: brightness(1.3);
+}
+
+/* ————————————
+   7) RESPONSIVE
+———————————— */
+@media(max-width:800px){
+  .profile-page::after{ display:none; }
+  .profile-avatar img{ width:120px !important; height:120px !important; }
+  .profile-header h1{ font-size:1.6rem !important; }
+}
