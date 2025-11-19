@@ -197,7 +197,7 @@ body.light .Card {
 }
 
 .col-sm-8 .Card {
-  font-family: var(--font-decorative);
+  font-family: var(--font-display);
   font-weight: bold;
 }
 
