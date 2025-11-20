@@ -1256,6 +1256,15 @@ to{ transform: rotate(360deg); }
 }
 .profile-avatar::before {
     /* copie le code du halo2 ici */
+    content: "";
+    position: absolute;
+    inset: -28px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(200,230,255,0.32), rgba(130,170,255,0.14) 45%, transparent 80%);
+    box-shadow: 0 0 32px rgba(180,220,255,0.35);
+    filter: blur(14px);
+    pointer-events:none;
+    z-index:-1;
 }
 
 
