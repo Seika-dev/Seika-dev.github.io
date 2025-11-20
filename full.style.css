@@ -1244,18 +1244,14 @@ from{ transform: rotate(0deg); }
 to{ transform: rotate(360deg); }
 }
 
+
+/* ========= HALO PAR DÉFAUT : VERSION 2 (lunaire) ========= */
+
 .profile-avatar {
     position: relative;
 }
-.profile-avatar.halo2::before {
-    /* la version que tu veux tester */
-}
-/* Active le halo 2 par défaut */
-.profile-avatar {
-    position: relative;
-}
+
 .profile-avatar::before {
-    /* copie le code du halo2 ici */
     content: "";
     position: absolute;
     inset: -28px;
@@ -1266,5 +1262,4 @@ to{ transform: rotate(360deg); }
     pointer-events:none;
     z-index:-1;
 }
-
 
