@@ -1244,4 +1244,18 @@ from{ transform: rotate(0deg); }
 to{ transform: rotate(360deg); }
 }
 
+.profile-avatar {
+    position: relative;
+}
+.profile-avatar.halo2::before {
+    /* la version que tu veux tester */
+}
+/* Active le halo 2 par défaut */
+.profile-avatar {
+    position: relative;
+}
+.profile-avatar::before {
+    /* copie le code du halo2 ici */
+}
+
 
