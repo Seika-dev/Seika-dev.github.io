@@ -266,14 +266,14 @@ body.light .Card {
 }
 
 /* test AVATAR HALO 2*/
-.avatar-container .profile-avatar {
+.avatar-container .PlayerIcon {
 }
 
-.profile-avatar {
+.PlayerIcon {
     position: relative;
 }
 
-.profile-avatar::before {
+.PlayerIcon::before {
     content: "";
     position: absolute;
     inset: -28px;
