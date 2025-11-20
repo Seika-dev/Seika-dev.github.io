@@ -273,7 +273,7 @@ body.light .Card {
   --chart-strong-losses: #02318dcc;
   --chart-rating-line: var(--primary-dark);
   --chart-deviation-area: #00286b8a;
-  --chart-area-fill: #0092ff5e;}
+  --chart-area-fill: #02217473;}
 
 /* Rating charts */
 .RatingsChart .weak-wins,
