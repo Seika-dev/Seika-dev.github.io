@@ -19,7 +19,7 @@
 
   /* Images de fond */
   --bg-light: url(https://images.stockcake.com/public/f/a/4/fa404199-1307-4e91-9b2b-e8b844b8bee9_large/moonlit-wolf-silhouette-stockcake.jpg);
-  --bg-dark: url(https://i.redd.it/9izyfdx0wkw41.jpg);
+  --bg-dark: url(https://images.stockcake.com/public/f/a/4/fa404199-1307-4e91-9b2b-e8b844b8bee9_large/moonlit-wolf-silhouette-stockcake.jpg);
   --logo-url: url(https://lagazettedeteyvat.fr/wp-content/uploads/2025/08/Serenade-de-la-lune-soyeuse.webp);
 
   /* Polices */
@@ -70,7 +70,7 @@ h3 {
   position: absolute;
   inset: 0;
   z-index: -1;
-  background-repeat: extand;
+  background-repeat: repeat;
   background-size: contain;
   background-position: 40 center;
   transition: clip-path 2s cubic-bezier(1, 0, 0, 1);
