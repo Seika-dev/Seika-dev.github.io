@@ -29,7 +29,7 @@
 
   /* Ombres et effets */
   --text-shadow: 1px 1px 1px #000;
-  --box-shadow-glow: 0 0 10px #008aff, 0 0 20px #00daff inset
+  --box-shadow-glow: 0 0 10px #008aff, 0 0 20px #00daff inset;
   --border-radius: 10px;
   --border-radius-large: 10px;
 }
@@ -388,22 +388,22 @@ body.light {
 /* ===== VARIABLES DE COULEURS POUR LE MODE ACCESSIBLE (Haut contraste) ===== */
 body.accessible {
   --flame-accessible-table-bg: #1a0000;
-  --flame-accessible -table-bg: #001936;
-  --flame-accessible -table-border-bottom: rgb(0 127 255 / 50%);
-  --flame-accessible -table-text-color: #ddebfe;
-  --flame-accessible -header-bg: #00132ccf;
-  --flame-accessible -row-even-bg: #000a2bd4;
-  --flame-accessible -row-odd-bg: #002a4fcf;
-  --flame-accessible -row-hover-bg-general: #246277;
-  --flame-accessible -row-hover-bg-clickable: #39bdf799;
-  --flame-accessible -glow-color1: #00d7ff;
-  --flame-accessible -glow-color2: #0069ff;
-  --flame-accessible -border-color: #00b0ffb5;
-  --flame-accessible date-text-color: #45c1fe;
-  --flame-accessible -won-result-color: #7aff7a;
-  --flame-accessible -lost-result-color: #ff6b6b;
-  --flame-accessible -header-glow: 0 0 10px #00fdff, 0 0 20px #005bff;
-  --flame-accessible -header-border: 4px solid #0385bf;}
+  --flame-accessible-table-bg: #001936;
+  --flame-accessible-table-border-bottom: rgb(0 127 255 / 50%);
+  --flame-accessible-table-text-color: #ddebfe;
+  --flame-accessible-header-bg: #00132ccf;
+  --flame-accessible-row-even-bg: #000a2bd4;
+  --flame-accessible-row-odd-bg: #002a4fcf;
+  --flame-accessible-row-hover-bg-general: #246277;
+  --flame-accessible-row-hover-bg-clickable: #39bdf799;
+  --flame-accessible-glow-color1: #00d7ff;
+  --flame-accessible-glow-color2: #0069ff;
+  --flame-accessible-border-color: #00b0ffb5;
+  --flame-accessibledate-text-color: #45c1fe;
+  --flame-accessible-won-result-color: #7aff7a;
+  --flame-accessible-lost-result-color: #ff6b6b;
+  --flame-accessible-header-glow: 0 0 10px #00fdff, 0 0 20px #005bff;
+  --flame-accessible-header-border: 4px solid #0385bf;}
 
 
 /* ===== STYLES DES TABLEAUX BASÉS SUR LES CLASSES DU BODY ===== */
@@ -832,7 +832,7 @@ body.light::after {
   bottom: -20px;
   width: 12px;
   height: 12px;
- background: radial-gradient(circle, #c2e6ff 50%, transparent 70%)
+ background: radial-gradient(circle, #c2e6ff 50%, transparent 70%);
   border-radius: 50%;
   opacity: 0.7;
   filter: blur(1.5px);
