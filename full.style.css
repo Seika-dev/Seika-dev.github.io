@@ -367,22 +367,22 @@ body.dark {
 
 /* ===== VARIABLES DE COULEURS POUR LE MODE CLAIR ===== */
 body.light {
-  --flame-light-table-bg: #fffbf0;
-  --flame-light-table-border-bottom: rgba(255, 140, 0, 0.5);
-  --flame-light-table-text-color: #333;
-  --flame-light-header-bg: #ffead0;
-  --flame-light-row-even-bg: #fff8eb;
-  --flame-light-row-odd-bg: #fff4e1;
-  --flame-light-row-hover-bg-general: #ffddb1;
-  --flame-light-row-hover-bg-clickable: #ffc99896;
-  --flame-light-glow-color1: #ffde5b;
-  --flame-light-glow-color2: #ff8c00;
-  --flame-light-border-color: #ff8c00;
-  --flame-light-date-text-color: #e65c00;
-  --flame-light-won-result-color: #008000;
-  --flame-light-lost-result-color: #cc0000;
-  --flame-light-header-glow: 0 0 10px #ffde5b, 0 0 20px #ff8c00;
-  --flame-light-header-border: 4px solid #ff8c00;
+  --flame-light-table-bg: #001936;
+  --flame-light-table-border-bottom: rgb(0 127 255 / 50%);
+  --flame-light-table-text-color: #ddebfe;
+  --flame-light-header-bg: #00132ccf;
+  --flame-light-row-even-bg: #000a2bd4;
+  --flame-light-row-odd-bg: #002a4fcf;
+  --flame-light-row-hover-bg-general: #246277;
+  --flame-light-row-hover-bg-clickable: #378be299;
+  --flame-light-glow-color1: #00d7ff;
+  --flame-light-glow-color2: #0069ff;
+  --flame-light-border-color: #00b0ffb5;
+  --flame-light-date-text-color: #45c1fe;
+  --flame-light-won-result-color: #7affe5;
+  --flame-light-lost-result-color: #b9b9b9;
+  --flame-light-header-glow: 0 0 10px #00fdff, 0 0 20px #005bff;
+  --flame-light-header-border: 4px solid #0385bf;
 }
 
 /* ===== VARIABLES DE COULEURS POUR LE MODE ACCESSIBLE (Haut contraste) ===== */
